@@ -657,7 +657,7 @@
 					var regionSector$ctorMethodName = matches[6];
 
 					this.regionSectorObjectsMemberName = $I[regionSectorClassName].prototype[regionSector$ctorMethodName].toString()
-						.match(/this\.([A-Z]{6})=\$I\.[A-Z]{12}\.[A-Z]{6}\(\$I\.[A-Z]{6},32,32\);/)[1];
+						.match(/this\.([A-Z]{6})=\$I\.[A-Z]{6,12}\.[A-Z]{6}\(\$I\.[A-Z]{6},32,32\);/)[1];
 				},
 				members: {
 					worldObjectWrapper: null,
