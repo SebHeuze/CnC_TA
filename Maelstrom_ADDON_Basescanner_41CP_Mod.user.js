@@ -5,9 +5,11 @@
 // @updateURL   https://raw.githubusercontent.com/leo7044/CnC_TA/master/Maelstrom_ADDON_Basescanner_41CP_Mod.user.js
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include     http*://cncapp*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.8.2
+// @version     1.8.10
 // @author      BlinDManX
 // @contributor leo7044 (https://github.com/leo7044)
+// @contributor AlkalyneD4 Patch 19.3 fix
+// @contributor nefrontheone ES Translation
 // @grant       none
 // @copyright   2012+, Claus Neumann
 // @license     CC BY-NC-ND 3.0 - http://creativecommons.org/licenses/by-nc-nd/3.0/
@@ -1363,34 +1365,34 @@
 
 			var T = Addons.Language.getInstance();
 			T.debug = false;
-			T.addtranslateobj( {main:"Point", de: "Position", pt: "Position", fr: "Position"} );
-			T.addtranslateobj( {main:"BaseScanner Overview", de: "Basescanner Übersicht", pt: "Visão geral do scanner de base", fr: "Aperçu du scanner de base"} );
-			T.addtranslateobj( {main:"Scan", de: "Scannen", pt: "Esquadrinhar", fr: "Balayer"} );
-			T.addtranslateobj( {main:"Location", de: "Lage", pt: "localização", fr: "Emplacement"} );
-			T.addtranslateobj( {main:"Player", de: "Spieler", pt: "Jogador", fr: "Joueur"} );
-			T.addtranslateobj( {main:"Bases", de: "Bases", pt: "Bases", fr: "Bases"} );
-			T.addtranslateobj( {main:"Camp,Outpost", de: "Lager,Vorposten", pt: "Camp,posto avançado", fr: "Camp,avant-poste"} );
-			T.addtranslateobj( {main:"Camp", de: "Lager", pt: "Camp", fr: "Camp"} );
-			T.addtranslateobj( {main:"Outpost", de: "Vorposten", pt: "posto avançado", fr: "avant-poste"} );
-			T.addtranslateobj( {main:"BaseScanner Layout", de: "BaseScanner Layout", pt: "Layout da Base de Dados de Scanner", fr: "Mise scanner de base"} );
-			T.addtranslateobj( {main:"Show Layouts", de: "Layouts anzeigen", pt: "Mostrar Layouts", fr: "Voir Layouts"} );
-			T.addtranslateobj( {main:"Building state", de: "Gebäudezustand", pt: "construção do Estado", fr: "construction de l'État"} );
-			T.addtranslateobj( {main:"Defense state", de: "Verteidigungszustand", pt: "de Defesa do Estado", fr: "défense de l'Etat"} );
-			T.addtranslateobj( {main:"CP", de: "KP", pt: "CP", fr: "CP"} );
-			T.addtranslateobj( {main:"CP Limit", de: "KP begrenzen", pt: "CP limitar", fr: "CP limiter"} );
-			T.addtranslateobj( {main:"min Level", de: "min. Level", pt: "nível mínimo", fr: "niveau minimum"} );
-			T.addtranslateobj( {main:"clear Cache", de: "Cache leeren", pt: "limpar cache", fr: "vider le cache"} );
-			T.addtranslateobj( {main:"Only center on World", de: "Nur auf Welt zentrieren", pt: "Único centro no Mundial", fr: "Seul centre sur World"} );
-			T.addtranslateobj( {main:"base set up at", de: "Basis errichtbar", pt: "base de configurar a", fr: "mis en place à la base"} );
-			T.addtranslateobj( {main:"Infantry", de: "Infanterie", pt: "Infantaria", fr: "Infanterie"} );
-			T.addtranslateobj( {main:"Vehicle", de: "Fahrzeuge", pt: "Veículos", fr: "Vehicule"} );
-			T.addtranslateobj( {main:"Aircraft", de: "Flugzeuge", pt: "Aeronaves", fr: "Aviation"} );
-			T.addtranslateobj( {main:"Tiberium", de: "Tiberium", pt: "Tibério", fr: "Tiberium"} );
-			T.addtranslateobj( {main:"Crystal", de: "Kristalle", pt: "Cristal", fr: "Cristal"} );
-			T.addtranslateobj( {main:"Power", de: "Strom", pt: "Potência", fr: "Energie"} );
-			T.addtranslateobj( {main:"Dollar", de: "Credits", pt: "Créditos", fr: "Crédit"} );
-			T.addtranslateobj( {main:"Research", de: "Forschung", pt: "Investigação", fr: "Recherche"} );
-			T.addtranslateobj( {main:"-----", de: "--", pt: "--", fr: "--"} );
+			T.addtranslateobj( {main:"Point", de: "Position", pt: "Position", fr: "Position", es: "Posición"} );
+			T.addtranslateobj( {main:"BaseScanner Overview", de: "Basescanner Übersicht", pt: "Visão geral do scanner de base", fr: "Aperçu du scanner de base", es: "Vista general"} );
+			T.addtranslateobj( {main:"Scan", de: "Scannen", pt: "Esquadrinhar", fr: "Balayer", es: "Escanear"} );
+			T.addtranslateobj( {main:"Location", de: "Lage", pt: "localização", fr: "Emplacement", es: "Ubicación"} );
+			T.addtranslateobj( {main:"Player", de: "Spieler", pt: "Jogador", fr: "Joueur", es:"Jugador"} );
+			T.addtranslateobj( {main:"Bases", de: "Bases", pt: "Bases", fr: "Bases", es: "Bases"} );
+			T.addtranslateobj( {main:"Camp,Outpost", de: "Lager,Vorposten", pt: "Camp,posto avançado", fr: "Camp,avant-poste", es: "Camp.,puesto avanz."} );
+			T.addtranslateobj( {main:"Camp", de: "Lager", pt: "Camp", fr: "Camp", es: "Campamento"} );
+			T.addtranslateobj( {main:"Outpost", de: "Vorposten", pt: "posto avançado", fr: "avant-poste", es:"Puesto avanzado"} );
+			T.addtranslateobj( {main:"BaseScanner Layout", de: "BaseScanner Layout", pt: "Layout da Base de Dados de Scanner", fr: "Mise scanner de base", es: "Diseños de BaseScanner"} );
+			T.addtranslateobj( {main:"Show Layouts", de: "Layouts anzeigen", pt: "Mostrar Layouts", fr: "Voir Layouts", es:"Mostrar diseños"} );
+			T.addtranslateobj( {main:"Building state", de: "Gebäudezustand", pt: "construção do Estado", fr: "construction de l'État", es:"Estado de construcción"} );
+			T.addtranslateobj( {main:"Defense state", de: "Verteidigungszustand", pt: "de Defesa do Estado", fr: "défense de l'Etat", es:"Estado de defensa"} );
+			T.addtranslateobj( {main:"CP", de: "KP", pt: "CP", fr: "CP", es:"PM"} );
+			T.addtranslateobj( {main:"CP Limit", de: "KP begrenzen", pt: "CP limitar", fr: "CP limiter", es:"Límites de PM"} );
+			T.addtranslateobj( {main:"min Level", de: "min. Level", pt: "nível mínimo", fr: "niveau minimum", es:"Nivel mínimo"} );
+			T.addtranslateobj( {main:"clear Cache", de: "Cache leeren", pt: "limpar cache", fr: "vider le cache", es:"Borrar caché"} );
+			T.addtranslateobj( {main:"Only center on World", de: "Nur auf Welt zentrieren", pt: "Único centro no Mundial", fr: "Seul centre sur World", es:"Sólo el centro del mundo"} );
+			T.addtranslateobj( {main:"base set up at", de: "Basis errichtbar", pt: "base de configurar a", fr: "mis en place à la base", es:"configuración de base en"} );
+			T.addtranslateobj( {main:"Infantry", de: "Infanterie", pt: "Infantaria", fr: "Infanterie", es:"Infantería"} );
+			T.addtranslateobj( {main:"Vehicle", de: "Fahrzeuge", pt: "Veículos", fr: "Vehicule", es:"Vehículo"} );
+			T.addtranslateobj( {main:"Aircraft", de: "Flugzeuge", pt: "Aeronaves", fr: "Aviation", es:"Aviación"} );
+			T.addtranslateobj( {main:"Tiberium", de: "Tiberium", pt: "Tibério", fr: "Tiberium", es:"Tiberio"} );
+			T.addtranslateobj( {main:"Crystal", de: "Kristalle", pt: "Cristal", fr: "Cristal", es:"Cristal"} );
+			T.addtranslateobj( {main:"Power", de: "Strom", pt: "Potência", fr: "Energie", es:"Energía"} );
+			T.addtranslateobj( {main:"Dollar", de: "Credits", pt: "Créditos", fr: "Crédit", es:"Créditos"} );
+			T.addtranslateobj( {main:"Research", de: "Forschung", pt: "Investigação", fr: "Recherche", es:"Investigación"} );
+			T.addtranslateobj( {main:"-----", de: "--", pt: "--", fr: "--", en: "-----"} );
 
 
 
