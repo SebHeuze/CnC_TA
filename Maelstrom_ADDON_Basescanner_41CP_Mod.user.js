@@ -5,7 +5,7 @@
 // @updateURL   https://raw.githubusercontent.com/leo7044/CnC_TA/master/Maelstrom_ADDON_Basescanner_41CP_Mod.user.js
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include     http*://cncapp*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.10
+// @version     1.8.10.1
 // @author      BlinDManX
 // @contributor leo7044 (https://github.com/leo7044)
 // @contributor AlkalyneD4 Patch 19.3 fix
@@ -1392,7 +1392,7 @@
 			T.addtranslateobj( {main:"Power", de: "Strom", pt: "Potência", fr: "Energie", es:"Energía"} );
 			T.addtranslateobj( {main:"Dollar", de: "Credits", pt: "Créditos", fr: "Crédit", es:"Créditos"} );
 			T.addtranslateobj( {main:"Research", de: "Forschung", pt: "Investigação", fr: "Recherche", es:"Investigación"} );
-			T.addtranslateobj( {main:"-----", de: "--", pt: "--", fr: "--", en: "-----"} );
+			T.addtranslateobj( {main:"-----", de: "--", pt: "--", fr: "--", es: "-----"} );
 
 
 
