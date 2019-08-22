@@ -5,7 +5,7 @@
 // @updateURL      https://raw.githubusercontent.com/leo7044/CnC_TA/master/API_wrapper.user.js
 // @include        http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        http*://cncapp*.alliances.commandandconquer.com/*/index.aspx*
-// @version 0.390737.6.1
+// @version 0.390737.6.2
 // @author infernal_me, KRS_L, krisan
 // @contributor leo7044 (https://github.com/leo7044)
 // ==/UserScript==
@@ -24,7 +24,7 @@
                 System = $I;
                 SharedLib = $I;
                 var strFunction;
-                
+
                 // SharedLib.Combat.CbtSimulation.prototype.DoStep
                 for (var x in $I) {
                     for (var key in $I[x].prototype) {
@@ -64,7 +64,7 @@
 
                 // ClientLib.Data.CityUnits.prototype.get_OffenseUnits
                 strFunction = ClientLib.Data.CityUnits.prototype.HasUnitMdbId.toString();
-                var searchString = "for (var b in {d:this.";
+                var searchString = "for(var b in {d:this.";
                 var startPos = strFunction.indexOf(searchString) + searchString.length;
                 var fn_name = strFunction.slice(startPos, startPos + 6);
                 strFunction = "var $createHelper;return this." + fn_name + ";";
@@ -74,7 +74,7 @@
 
                 // ClientLib.Data.CityUnits.prototype.get_DefenseUnits
                 strFunction = ClientLib.Data.CityUnits.prototype.HasUnitMdbId.toString();
-                searchString = "for (var c in {d:this.";
+                searchString = "for(var c in {d:this.";
                 startPos = strFunction.indexOf(searchString) + searchString.length;
                 fn_name = strFunction.slice(startPos, startPos + 6);
                 strFunction = "var $createHelper;return this." + fn_name + ";";
@@ -84,7 +84,7 @@
 
                 // ClientLib.Vis.Battleground.Battleground.prototype.get_Simulation
                 strFunction = ClientLib.Vis.Battleground.Battleground.prototype.StartBattle.toString();
-                searchString = "=0;for(var a=0; (a<9); a++){this.";
+                searchString = "=0;for(var a=0;(a<9);a++){this.";
                 startPos = strFunction.indexOf(searchString) + searchString.length;
                 fn_name = strFunction.slice(startPos, startPos + 6);
                 strFunction = "return this." + fn_name + ";";

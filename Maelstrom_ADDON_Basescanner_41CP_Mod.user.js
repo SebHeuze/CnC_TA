@@ -5,7 +5,7 @@
 // @updateURL   https://raw.githubusercontent.com/leo7044/CnC_TA/master/Maelstrom_ADDON_Basescanner_41CP_Mod.user.js
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include     http*://cncapp*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.8.1
+// @version     1.8.8.2
 // @author      BlinDManX
 // @contributor leo7044 (https://github.com/leo7044)
 // @grant       none
@@ -54,7 +54,7 @@
 						this.add(this.ZN);
 
 						this.add(this.ZP);
-						this.ZL.setData(this.ZE);							
+						this.ZL.setData(this.ZE);
 
 					} catch (e) {
 						console.debug("Addons.BaseScannerGUI.construct: ", e);
@@ -91,7 +91,7 @@
 					ZS : {},
 					YZ : null,
 					YY : null,
-					
+
 					openWindow : function (title) {
 						try {
 							this.setCaption(title);
@@ -100,7 +100,7 @@
 							} else {
 								MT_Cache.updateCityCache();
 								MT_Cache = window.MaelstromTools.Cache.getInstance();
-								var cname;								
+								var cname;
 								this.ZC.removeAll();
 								for (cname in MT_Cache.Cities) {
 									var item = new qx.ui.form.ListItem(cname, null, MT_Cache.Cities[cname].Object);
@@ -108,7 +108,7 @@
 									if (Addons.LocalStorage.getserver("Basescanner_LastCityID") == MT_Cache.Cities[cname].Object.get_Id()) {
 										this.ZC.setSelection([item]);
 									}
-								}							
+								}
 								this.open();
 								this.moveTo(100, 100);
 							}
@@ -176,18 +176,18 @@
 								}));
 							tcm.setDataCellRenderer(19, new qx.ui.table.cellrenderer.Boolean());
 
-							
+
 							if (PerforceChangelist >= 436669) { // 15.3 patch
 								var eventType = "cellDbltap";
 							} else { //old
 								var eventType = "cellDblclick";
 							}
-				
+
 							this.ZN.addListener(eventType, function (e) {
 								Addons.BaseScannerGUI.getInstance().FB(e);
 							}, this);
 
-							
+
 							tcm.addListener("widthChanged", function (e) {
 								//console.log(e, e.getData());
 								var col = e.getData().col;
@@ -292,7 +292,7 @@
 							this.ZC.setMargin(5);
 							MT_Cache.updateCityCache();
 							MT_Cache = window.MaelstromTools.Cache.getInstance();
-							var cname;							
+							var cname;
 							for (cname in MT_Cache.Cities) {
 								var item = new qx.ui.form.ListItem(cname, null, MT_Cache.Cities[cname].Object);
 								this.ZC.add(item);
@@ -300,7 +300,7 @@
 									this.ZC.setSelection([item]);
 								}
 							}
-							this.ZC.addListener("changeSelection", function (e) {								
+							this.ZC.addListener("changeSelection", function (e) {
 								this.FP(0, 1, 200);
 								this.ZH = false;
 								this.ZG.setLabel(this.T.get("Scan"));
@@ -550,8 +550,7 @@
 
 						if (this.ZT) {
 							var obj = ClientLib.Data.WorldSector.WorldObjectCity.prototype;
-							// var fa = foundfnkstring(obj['$ctor'], /=0;this\.(.{6})=g>>7&255;.*d\+=f;this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectCity", 2);
-							var fa = foundfnkstring(obj['$ctor'], /this\.(.{6})=\(?\(?g>>8\)?\&.*d\+=f;this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectCity", 2);
+							var fa = foundfnkstring(obj['$ctor'], /this\.(.{6})=\(?\(?\(?g>>8\)?\&.*d\+=f;this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectCity", 2);
 							if (fa != null && fa[1].length == 6) {
 								obj.getLevel = function () {
 									return this[fa[1]];
@@ -568,7 +567,6 @@
 							}
 
 							obj = ClientLib.Data.WorldSector.WorldObjectNPCBase.prototype;
-							//var fb = foundfnkstring(obj['$ctor'], /100;this\.(.{6})=Math.floor.*d\+=f;this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectNPCBase", 2);
 							var fb = foundfnkstring(obj['$ctor'], /100\){0,1};this\.(.{6})=Math.floor.*d\+=f;this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectNPCBase", 2);
 							if (fb != null && fb[1].length == 6) {
 								obj.getLevel = function () {
@@ -586,7 +584,6 @@
 							}
 
 							obj = ClientLib.Data.WorldSector.WorldObjectNPCCamp.prototype;
-							//var fc = foundfnkstring(obj['$ctor'], /100;this\.(.{6})=Math.floor.*=-1;\}this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectNPCCamp", 2);
 							var fc = foundfnkstring(obj['$ctor'], /100\){0,1};this\.(.{6})=Math.floor.*this\.(.{6})=\(*g\>\>(22|0x16)\)*\&.*=-1;\}this\.(.{6})=\(/, "ClientLib.Data.WorldSector.WorldObjectNPCCamp", 4);
 							if (fc != null && fc[1].length == 6) {
 								obj.getLevel = function () {
@@ -1274,7 +1271,7 @@
 					}
 				}
 			});
-			
+
 			if(typeof Addons.Language === 'undefined'){
 				qx.Class.define("Addons.Language", {
 					type : "singleton",
@@ -1284,11 +1281,11 @@
 						debug : false,
 						addtranslateobj : function (o) {
 							if ( o.hasOwnProperty("main") ){
-								this.d[o.main.toString()] = o;								
+								this.d[o.main.toString()] = o;
 								if(this.debug){
 									console.log("Translate Added ", o.main.toString() );
 								}
-								delete o.main;								
+								delete o.main;
 							} else {
 								console.debug("Addons.Language.addtranslateobj main not define");
 							}
@@ -1309,7 +1306,7 @@
 					}
 				});
 			}
-			
+
 			qx.Class.define("qx.ui.table.cellrenderer.Replace", {
 				extend : qx.ui.table.cellrenderer.Default,
 
@@ -1360,10 +1357,10 @@
 					}
 				}
 			});
-			
-			
+
+
 			console.info("Maelstrom_Basescanner initalisiert");
-			
+
 			var T = Addons.Language.getInstance();
 			T.debug = false;
 			T.addtranslateobj( {main:"Point", de: "Position", pt: "Position", fr: "Position"} );
@@ -1373,18 +1370,18 @@
 			T.addtranslateobj( {main:"Player", de: "Spieler", pt: "Jogador", fr: "Joueur"} );
 			T.addtranslateobj( {main:"Bases", de: "Bases", pt: "Bases", fr: "Bases"} );
 			T.addtranslateobj( {main:"Camp,Outpost", de: "Lager,Vorposten", pt: "Camp,posto avançado", fr: "Camp,avant-poste"} );
-			T.addtranslateobj( {main:"Camp", de: "Lager", pt: "Camp", fr: "Camp"} );						
+			T.addtranslateobj( {main:"Camp", de: "Lager", pt: "Camp", fr: "Camp"} );
 			T.addtranslateobj( {main:"Outpost", de: "Vorposten", pt: "posto avançado", fr: "avant-poste"} );
 			T.addtranslateobj( {main:"BaseScanner Layout", de: "BaseScanner Layout", pt: "Layout da Base de Dados de Scanner", fr: "Mise scanner de base"} );
-			T.addtranslateobj( {main:"Show Layouts", de: "Layouts anzeigen", pt: "Mostrar Layouts", fr: "Voir Layouts"} );						
+			T.addtranslateobj( {main:"Show Layouts", de: "Layouts anzeigen", pt: "Mostrar Layouts", fr: "Voir Layouts"} );
 			T.addtranslateobj( {main:"Building state", de: "Gebäudezustand", pt: "construção do Estado", fr: "construction de l'État"} );
 			T.addtranslateobj( {main:"Defense state", de: "Verteidigungszustand", pt: "de Defesa do Estado", fr: "défense de l'Etat"} );
 			T.addtranslateobj( {main:"CP", de: "KP", pt: "CP", fr: "CP"} );
-			T.addtranslateobj( {main:"CP Limit", de: "KP begrenzen", pt: "CP limitar", fr: "CP limiter"} );						
+			T.addtranslateobj( {main:"CP Limit", de: "KP begrenzen", pt: "CP limitar", fr: "CP limiter"} );
 			T.addtranslateobj( {main:"min Level", de: "min. Level", pt: "nível mínimo", fr: "niveau minimum"} );
 			T.addtranslateobj( {main:"clear Cache", de: "Cache leeren", pt: "limpar cache", fr: "vider le cache"} );
 			T.addtranslateobj( {main:"Only center on World", de: "Nur auf Welt zentrieren", pt: "Único centro no Mundial", fr: "Seul centre sur World"} );
-			T.addtranslateobj( {main:"base set up at", de: "Basis errichtbar", pt: "base de configurar a", fr: "mis en place à la base"} );	
+			T.addtranslateobj( {main:"base set up at", de: "Basis errichtbar", pt: "base de configurar a", fr: "mis en place à la base"} );
 			T.addtranslateobj( {main:"Infantry", de: "Infanterie", pt: "Infantaria", fr: "Infanterie"} );
 			T.addtranslateobj( {main:"Vehicle", de: "Fahrzeuge", pt: "Veículos", fr: "Vehicule"} );
 			T.addtranslateobj( {main:"Aircraft", de: "Flugzeuge", pt: "Aeronaves", fr: "Aviation"} );
@@ -1394,10 +1391,10 @@
 			T.addtranslateobj( {main:"Dollar", de: "Credits", pt: "Créditos", fr: "Crédit"} );
 			T.addtranslateobj( {main:"Research", de: "Forschung", pt: "Investigação", fr: "Recherche"} );
 			T.addtranslateobj( {main:"-----", de: "--", pt: "--", fr: "--"} );
-			
 
-			
-			
+
+
+
 			var MT_Lang = null;
 			var MT_Cache = null;
 			var MT_Base = null;
@@ -1417,16 +1414,16 @@
 			}, this);
 			Addons.BaseScannerGUI.getInstance().addListener("close", Addons.BaseScannerGUI.getInstance().FN, Addons.BaseScannerGUI.getInstance());
 			//this.addListener("resize", function(){ }, this );
-			
+
 			MT_Base.addToMainMenu("BaseScanner", openBaseScannerOverview);
-			
+
 			if(typeof Addons.AddonMainMenu !== 'undefined'){
 				var addonmenu = Addons.AddonMainMenu.getInstance();
 				addonmenu.AddMainMenu("Basescanner", function () {
 					Addons.BaseScannerGUI.getInstance().openWindow(T.get("BaseScanner Overview") + " version " + window.__msbs_version);
 				},"ALT+B");
 			}
-			
+
 		}
 
 		function getResourcesPart(cityEntities) {
