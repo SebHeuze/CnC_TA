@@ -4,8 +4,9 @@
 // @license        GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 // @author         petui
 // @contributor    leo7044 (https://github.com/leo7044)
-// @downloadURL    https://raw.githubusercontent.com/leo7044/CnC_TA/master/Tiberium_Alliances_Report_Stats_sumPerCp.user.js
-// @updateURL      https://raw.githubusercontent.com/leo7044/CnC_TA/master/Tiberium_Alliances_Report_Stats_sumPerCp.user.js
+// @contributor    AlkalyneD4 (https://github.com/SebHeuze)
+// @downloadURL    https://raw.githubusercontent.com/SebHeuze/CnC_TA/master/Tiberium_Alliances_Report_Stats_sumPerCp.user.js
+// @updateURL      https://raw.githubusercontent.com/SebHeuze/CnC_TA/master/Tiberium_Alliances_Report_Stats_sumPerCp.user.js
 // @description    Calculates combined RT and CP costs and loot of multiple combat reports
 // @include        http*://cncapp*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
