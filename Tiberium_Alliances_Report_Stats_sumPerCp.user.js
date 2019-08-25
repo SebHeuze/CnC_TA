@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Tiberium Alliances Report Stats
-// @version        0.5.3.1
+// @version        0.5.3.2
 // @license        GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 // @author         petui
 // @contributor    leo7044 (https://github.com/leo7044)
@@ -130,13 +130,13 @@
 
 						/* Detect and fix bug described in http://forum.alliances.commandandconquer.com/showthread.php?tid=30346 */ {
 							source = ClientLib.Data.Reports.Reports.prototype.AddReport.toString();
-							var initMethodName = source.match(/break;\}\}[a-z]\.([A-Z]{6})\([a-z]\);if/)[1];
+							var initMethodName = source.match(/break;\}[a-z]\.([A-Z]{6})\([a-z]\);if/)[1];
 
 							source = ClientLib.Data.Reports.CombatReport.prototype[initMethodName].toString();
 							var setDataMethodName = source.match(/this\.([A-Z]{6})\([A-Za-z]+\);/)[1];
 
 							source = ClientLib.Data.Reports.CombatReport.prototype[setDataMethodName].toString();
-							var matches = source.match(/this\.([A-Z]{6})=([a-z])\.abl;this\.[A-Z]{6}=\2\.abl;/);
+							var matches = source.match(/this\.([A-Z]{6})=([a-z])\.abl;/);
 
 							if (matches !== null) {
 								var attackerBaseIdMemberName = matches[1];
@@ -288,7 +288,7 @@
 						this.reportsLoaded = [];
 
 						var rowCount = tableModel.getRowCount();
-						
+
 						for (var row = 0; row < rowCount; row++) {
 							var rowData = tableModel.getRowData(row);
 
