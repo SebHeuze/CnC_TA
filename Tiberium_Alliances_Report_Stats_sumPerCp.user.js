@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Tiberium Alliances Report Stats
-// @version        0.5.3.2
+// @version        0.5.3.3
 // @license        GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 // @author         petui
 // @contributor    leo7044 (https://github.com/leo7044)
@@ -131,7 +131,7 @@
 
 						/* Detect and fix bug described in http://forum.alliances.commandandconquer.com/showthread.php?tid=30346 */ {
 							source = ClientLib.Data.Reports.Reports.prototype.AddReport.toString();
-							var initMethodName = source.match(/break;\}[a-z]\.([A-Z]{6})\([a-z]\);if/)[1];
+							var initMethodName = source.match(/break;\}\}[a-z]\.([A-Z]{6})\([a-z]\);if/)[1];
 
 							source = ClientLib.Data.Reports.CombatReport.prototype[initMethodName].toString();
 							var setDataMethodName = source.match(/this\.([A-Z]{6})\([A-Za-z]+\);/)[1];
